@@ -21,7 +21,7 @@ CPU_CORES="0-5"    # used for all starts (taskset)
 DEFAULT_BLOCKS=7200
 
 # Base command; keep as you had it (quoted expansions will be used later)
-BASE_COMMAND="$NODE_BIN --database rocksdb --offchain-worker always --prometheus-external --base-path $HOME/subtensor/data --chain chainspecs/raw_spec_finney.json --no-mdns --bootnodes /dns/bootnode.finney.chain.opentensor.ai/tcp/30333/ws/p2p/12D3KooWRwbMb85RWnT8DSXSYMWQtuDwh4LJzndoRrTDotTR5gDC --experimental-rpc-endpoint listen-addr=10.2.1.103:9944"
+BASE_COMMAND="$NODE_BIN --database rocksdb --offchain-worker always --prometheus-external --base-path $HOME/subtensor/data --chain chainspecs/raw_spec_finney.json --no-mdns --bootnodes /dns/bootnode.finney.chain.opentensor.ai/tcp/30333/ws/p2p/12D3KooWRwbMb85RWnT8DSXSYMWQtuDwh4LJzndoRrTDotTR5gDC --experimental-rpc-endpoint listen-addr=10.2.1.102:9944"
 
 # === Helpers ===
 log() { echo "[$(date +'%F %T')] $*"; }
