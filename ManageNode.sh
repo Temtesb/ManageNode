@@ -12,16 +12,15 @@ set -euo pipefail
 # === CONFIG ===
 NODE_DIR="$HOME/subtensor"
 NODE_BIN="$NODE_DIR/target/release/node-subtensor"
-LOG_FILE="$NODE_DIR/subtensor.log"
-PID_FILE="$NODE_DIR/subtensor.pid"
-MODE_FILE="$NODE_DIR/last_mode.txt"
-DB_PATH="$NODE_DIR/data/chains/bittensor/db/full"
+LOG_FILE="/mnt/archive_node/subtensor.log"
+PID_FILE="/mnt/archive_node/subtensor.pid"
+MODE_FILE="/mnt/archive_node/last_mode.txt"
+DB_PATH="/mnt/archive_node/data/chains/bittensor/db/full"
 NODE_NAME="subtensor-node"
-CPU_CORES="0-5"    # used for all starts (taskset)
+CPU_CORES="0-5" # used for all starts (taskset)
 DEFAULT_BLOCKS=7200
-
 # Base command; keep as you had it (quoted expansions will be used later)
-BASE_COMMAND="$NODE_BIN --database rocksdb --offchain-worker always --prometheus-external --base-path $HOME/subtensor/data --chain chainspecs/raw_spec_finney.json --no-mdns --bootnodes /dns/bootnode.finney.chain.opentensor.ai/tcp/30333/ws/p2p/12D3KooWRwbMb85RWnT8DSXSYMWQtuDwh4LJzndoRrTDotTR5gDC --experimental-rpc-endpoint listen-addr=10.2.1.102:9944"
+BASE_COMMAND="$NODE_BIN --database rocksdb --offchain-worker always --prometheus-external --base-path /mnt/archive_node --chain chainspecs/raw_spec_finney.json --no-mdns --bootnodes /dns/bootnode.finney.chain.opentensor.ai/tcp/30333/ws/p2p/12D3KooWRwbMb85RWnT8DSXSYMWQtuDwh4LJzndoRrTDotTR5gDC --experimental-rpc-endpoint listen-addr=10.2.1.102:9944"
 
 # === Helpers ===
 log() { echo "[$(date +'%F %T')] $*"; }
